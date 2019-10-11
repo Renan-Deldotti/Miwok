@@ -19,6 +19,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,10 +30,39 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
+
+        //First way to call another activity
+        TextView callFamilyActivity = (TextView) findViewById(R.id.family);
+        callFamilyActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,FamilyActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
+    //Second way to call a new activity
     public void openNumbersList(View view) {
         Intent intent = new Intent(this,NumbersActivity.class);
         startActivity(intent);
     }
+
+    //Third way to call a new activity
+    public void openColorsOrPhrases(View view) {
+        Intent intent;
+        switch (view.getId()){
+            case R.id.colors:
+                intent = new Intent(this,ColorsActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.phrases:
+                intent = new Intent(this,PhrasesActivity.class);
+                startActivity(intent);
+                break;
+            default:
+                Toast.makeText(this,"Error",Toast.LENGTH_LONG);
+        }
+    }
+
 }
