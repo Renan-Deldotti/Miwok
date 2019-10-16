@@ -11,11 +11,11 @@
         android:id="@+id/miwok_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="lutti"
+        tools:text=""
         android:onClick="showIdToast"/>
     <TextView
         android:id="@+id/default_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="one"/>
+        tools:text="" />
 </android.support.v7.widget.LinearLayoutCompat>

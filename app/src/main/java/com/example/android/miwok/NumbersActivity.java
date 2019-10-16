@@ -60,8 +60,7 @@ public class NumbersActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
     }
     public void showIdToast(View view) {
-        TextView textView = (TextView) findViewById(view.getId());
-        String textToShow = "Textview pressed: " + view.getId() + "\nThe Text is: " + textView.getText();
+        String textToShow = "Textview pressed: " + view.getId() + "\nThe Text is: " + ((TextView) findViewById(view.getId())).getText();
         Toast.makeText(this,textToShow,Toast.LENGTH_LONG).show();
     }
 }
