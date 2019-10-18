@@ -1,8 +1,9 @@
 package com.example.android.miwok;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
@@ -27,7 +28,7 @@ public class PhrasesActivity extends AppCompatActivity {
         words.add(new Word("I’m coming.", "әәnәm"));
         words.add(new Word("Let’s go.", "yoowutis"));
         words.add(new Word("Come here.", "әnni'nem"));
-        WordAdapter wordAdapter = new WordAdapter(this,words);
+        WordAdapter wordAdapter = new WordAdapter(this, words);
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(wordAdapter);
     }
