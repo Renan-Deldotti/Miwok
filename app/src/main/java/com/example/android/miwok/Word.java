@@ -8,17 +8,51 @@ class Word {
 
     private String mDefaultTranslation;
     private String mMiwokTranslation;
+    private int mImageResourceId;
 
+    /**
+     * Construtor para traducao e palavra na lingua nativa
+     * @param defaultTranslation A palavra a ser mostrada na lingua nativa do usuario
+     * @param miwokTranslation A Traducao na lingua Miwok
+     */
     public Word(String defaultTranslation, String miwokTranslation){
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
     }
 
+    /**
+     * Construtor que adiciona uma imagem e dois campos de texto
+     * @param defaultTranslation A palavra a ser mostrada na lingua nativa do usuario
+     * @param miwokTranslation A Traducao na lingua Miwok
+     * @param imageResourceId Imagem relacionada a traducao
+     */
+    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId){
+        mDefaultTranslation = defaultTranslation;
+        mMiwokTranslation = miwokTranslation;
+        mImageResourceId = imageResourceId;
+    }
+
+    /**
+     *
+     * @return A palavra na lingua nativa do usuario
+     */
     public String getDefaultTranslation() {
         return mDefaultTranslation;
     }
 
+    /**
+     *
+     * @return A palavra na lingua Miwok
+     */
     public String getMiwokTranslation() {
         return mMiwokTranslation;
+    }
+
+    /**
+     *
+     * @return A imagem relativa a palavra
+     */
+    public int getImageResourceId(){
+        return mImageResourceId;
     }
 }
