@@ -11,7 +11,8 @@
         android:id="@+id/secondLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="@dimen/list_item_height">
+        android:minHeight="@dimen/list_item_height"
+        android:background="@color/category_numbers">
 
         <ImageView
             android:id="@+id/default_image"
@@ -24,28 +25,44 @@
 
         <TextView
             android:id="@+id/miwok_text_view"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"
             android:text="TESTEEEEEEEEEEEE"
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@android:color/white"
             android:textStyle="bold"
+            android:gravity="start"
             app:layout_constraintBottom_toTopOf="@+id/default_text_view"
             app:layout_constraintLeft_toRightOf="@id/default_image"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/playSpeach"/>
 
         <TextView
             android:id="@+id/default_text_view"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"
             android:text="TESTEEEEEEEEEEEE2"
             android:textAppearance="?android:textAppearanceMedium"
+            android:gravity="start"
             android:textColor="@android:color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/default_image"
-            app:layout_constraintTop_toBottomOf="@+id/miwok_text_view" />
+            app:layout_constraintTop_toBottomOf="@+id/miwok_text_view"
+            app:layout_constraintRight_toLeftOf="@id/playSpeach"/>
+        <Button
+            android:id="@+id/playSpeach"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:background="@drawable/ic_play_button"
+            android:layout_marginRight="8dp"
+            android:backgroundTint="@color/tan_background"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!--ImageView
