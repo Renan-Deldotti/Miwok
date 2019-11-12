@@ -1,5 +1,6 @@
 package com.example.android.miwok;
 
+
 /**
  * Faz a traducao de Miwok para a lingua selecionada no android
  */
@@ -60,4 +61,5 @@ class Word {
     public boolean hasImage(){
         return mImageResourceId != NO_IMAGE_PROVIDED;
     }
+
 }
