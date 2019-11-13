@@ -48,8 +48,9 @@ public class WordAdapter extends ArrayAdapter<Word> {
         }else{
             imageResource.setVisibility(View.GONE);
         }
+
         listItemView.findViewById(R.id.secondLayout).setBackgroundColor(ContextCompat.getColor(getContext(),activityColor));
-        defaulTextView.setTag(currentWord.getAudioResourceId());
+        //defaulTextView.setTag(currentWord.getAudioResourceId());
 
         //Retorna o objeto para ser adicionado na ListView
         return listItemView;

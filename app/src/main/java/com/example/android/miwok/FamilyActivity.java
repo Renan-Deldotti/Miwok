@@ -40,6 +40,7 @@ public class FamilyActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 mediaPlayer = MediaPlayer.create(FamilyActivity.this,words.get(i).getAudioResourceId());
+                mediaPlayer.start();
             }
         });
     }

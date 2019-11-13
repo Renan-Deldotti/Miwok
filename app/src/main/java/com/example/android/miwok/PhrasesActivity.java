@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class PhrasesActivity extends AppCompatActivity {
 
-    MediaPlayer mediaPlayer;
+    private MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
