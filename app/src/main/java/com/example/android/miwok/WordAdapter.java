@@ -11,15 +11,12 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
-import androidx.core.view.ViewCompat;
 
 import java.util.ArrayList;
 
 public class WordAdapter extends ArrayAdapter<Word> {
 
-    //private static final String LOG_TAG = WordAdapter.class.getSimpleName();
     private int activityColor;
 
     public WordAdapter(Activity context, ArrayList<Word> words, int newActivityColor){
@@ -52,12 +49,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
             imageResource.setVisibility(View.GONE);
         }
         listItemView.findViewById(R.id.secondLayout).setBackgroundColor(ContextCompat.getColor(getContext(),activityColor));
-        /*TextView songId = listItemView.findViewById(R.id.songId);
-        songId.setText(currentWord.getAudioResourceId());*/
-        /*
-        miwokTextView.setTag(""+ViewCompat.generateViewId() + "Item position: "+getItem(position));
-        miwokTextView.setId(ViewCompat.generateViewId());
-        */
+        defaulTextView.setTag(currentWord.getAudioResourceId());
 
         //Retorna o objeto para ser adicionado na ListView
         return listItemView;
