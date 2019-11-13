@@ -108,11 +108,11 @@ public class NumbersActivity extends AppCompatActivity {
         mediaPlayer = MediaPlayer.create(this, words.get(position).getAudioResourceId());
         mediaPlayer.start();
     }
-    //Nao funciona
+    /*Nao funciona
     private void playVoice(View view){
         String txtToShow = ((TextView)view.findViewById(R.id.songId)).getText().toString();
         mediaPlayer = MediaPlayer.create(this, Uri.parse(txtToShow));
         mediaPlayer.start();
         Toast.makeText(this,txtToShow,Toast.LENGTH_LONG).show();
-    }
+    }*/
 }

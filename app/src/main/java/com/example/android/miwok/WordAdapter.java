@@ -52,8 +52,8 @@ public class WordAdapter extends ArrayAdapter<Word> {
             imageResource.setVisibility(View.GONE);
         }
         listItemView.findViewById(R.id.secondLayout).setBackgroundColor(ContextCompat.getColor(getContext(),activityColor));
-        TextView songId = listItemView.findViewById(R.id.songId);
-        songId.setText(currentWord.getAudioResourceId());
+        /*TextView songId = listItemView.findViewById(R.id.songId);
+        songId.setText(currentWord.getAudioResourceId());*/
         /*
         miwokTextView.setTag(""+ViewCompat.generateViewId() + "Item position: "+getItem(position));
         miwokTextView.setId(ViewCompat.generateViewId());
