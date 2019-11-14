@@ -66,9 +66,25 @@ public class NumbersActivity extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                showIdToast(view);
+                //showIdToast(view);
+                releaseMediaPlayer();
                 mediaPlayer = MediaPlayer.create(NumbersActivity.this, words.get(position).getAudioResourceId());
                 mediaPlayer.start();
+                /*
+                mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                    @Override
+                    public void onPrepared(MediaPlayer mediaPlayer) {
+                        Toast.makeText(NumbersActivity.this,"Song start",Toast.LENGTH_LONG).show();
+                    }
+                });*/
+                //Verifica se ja terminou de rodar o audio
+                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        //Toast.makeText(NumbersActivity.this,"Song end",Toast.LENGTH_LONG).show();
+                        releaseMediaPlayer();
+                    }
+                });
             }
         });
     }
@@ -81,5 +97,21 @@ public class NumbersActivity extends AppCompatActivity {
         TextView textView = view.findViewById(R.id.default_text_view);
         String textToShow = "Playing audio\nDefault value: " + textView.getText().toString() + "\nIn Miwok language: " + ((TextView) view.findViewById(R.id.miwok_text_view)).getText().toString().trim();
         Toast.makeText(this, textToShow, Toast.LENGTH_LONG).show();
+    }
+    /**
+     * Clean up the media player by releasing its resources.
+     */
+    private void releaseMediaPlayer() {
+        // If the media player is not null, then it may be currently playing a sound.
+        if (mediaPlayer != null) {
+            // Regardless of the current state of the media player, release its resources
+            // because we no longer need it.
+            mediaPlayer.release();
+
+            // Set the media player back to null. For our code, we've decided that
+            // setting the media player to null is an easy way to tell that the media player
+            // is not configured to play an audio file at the moment.
+            mediaPlayer = null;
+        }
     }
 }

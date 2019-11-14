@@ -13,6 +13,12 @@ import java.util.ArrayList;
 public class ColorsActivity extends AppCompatActivity {
 
     private MediaPlayer mediaPlayer;
+    private MediaPlayer.OnCompletionListener mediaCompleted = new MediaPlayer.OnCompletionListener() {
+        @Override
+        public void onCompletion(MediaPlayer mediaPlayer) {
+            relaseMediaPlayer();
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +45,17 @@ public class ColorsActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                relaseMediaPlayer();
                 mediaPlayer = MediaPlayer.create(ColorsActivity.this, words.get(i).getAudioResourceId());
                 mediaPlayer.start();
+                mediaPlayer.setOnCompletionListener(mediaCompleted);
             }
         });
     }
-
+    private void relaseMediaPlayer(){
+        if(mediaPlayer != null){
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+    }
 }
