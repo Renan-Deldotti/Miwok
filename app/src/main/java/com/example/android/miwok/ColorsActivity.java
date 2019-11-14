@@ -52,6 +52,12 @@ public class ColorsActivity extends AppCompatActivity {
             }
         });
     }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        relaseMediaPlayer();
+    }
+
     private void relaseMediaPlayer(){
         if(mediaPlayer != null){
             mediaPlayer.release();

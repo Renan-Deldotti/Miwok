@@ -98,6 +98,13 @@ public class NumbersActivity extends AppCompatActivity {
         String textToShow = "Playing audio\nDefault value: " + textView.getText().toString() + "\nIn Miwok language: " + ((TextView) view.findViewById(R.id.miwok_text_view)).getText().toString().trim();
         Toast.makeText(this, textToShow, Toast.LENGTH_LONG).show();
     }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
     /**
      * Clean up the media player by releasing its resources.
      */
