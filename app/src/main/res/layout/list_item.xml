@@ -49,7 +49,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/default_image"
             app:layout_constraintTop_toBottomOf="@id/miwok_text_view"/>
-        
+
         <ImageView
             android:src="@drawable/baseline_play_arrow_white_36dp"
             android:layout_width="24dp"
