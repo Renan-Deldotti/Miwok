@@ -1,17 +1,8 @@
 package com.example.android.miwok;
 
-import android.content.Context;
-import android.media.AudioManager;
-import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-
-import java.util.ArrayList;
 
 public class ColorsActivity extends AppCompatActivity {
 
