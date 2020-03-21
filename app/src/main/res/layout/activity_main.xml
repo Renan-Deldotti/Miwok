@@ -13,16 +13,28 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/tan_background"
     android:orientation="vertical"
     tools:context="com.example.android.miwok.MainActivity">
+    
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/viewPager">
 
-    <FrameLayout
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/iniTabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabMode="fixed"/>
+    </androidx.viewpager.widget.ViewPager>
+
+    <!--FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/category_numbers">
@@ -73,6 +85,6 @@
             android:onClick="openColorsOrPhrases"
             android:text="@string/category_phrases" />
 
-    </FrameLayout>
+    </FrameLayout-->
 
 </LinearLayout>

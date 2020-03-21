@@ -21,18 +21,18 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 public class MainActivity extends AppCompatActivity {
 
-    @Override
+    /*@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
-
-        //First way to call another activity
         TextView callFamilyActivity = (TextView) findViewById(R.id.family);
         callFamilyActivity.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,28 +41,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
+    }*/
 
-    //Second way to call a new activity
-    public void openNumbersList(View view) {
-        Intent intent = new Intent(this,NumbersActivity.class);
-        startActivity(intent);
-    }
-
-    //Third way to call a new activity
-    public void openColorsOrPhrases(View view) {
-        Intent intent;
-        switch (view.getId()){
-            case R.id.colors:
-                intent = new Intent(this,ColorsActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.phrases:
-                intent = new Intent(this,PhrasesActivity.class);
-                startActivity(intent);
-                break;
-            default:
-                Toast.makeText(this,"Error",Toast.LENGTH_LONG);
-        }
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        ViewPager viewPager = findViewById(R.id.viewPager);
+        CategoryAdapter categoryAdapter = new CategoryAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        viewPager.setAdapter(categoryAdapter);
     }
 }
