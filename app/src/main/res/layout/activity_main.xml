@@ -31,6 +31,8 @@
             android:id="@+id/iniTabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/primary_color"
+            app:tabTextColor="@color/tan_background"
             app:tabMode="fixed"/>
     </androidx.viewpager.widget.ViewPager>
 
